@@ -1,0 +1,27 @@
+{
+  "name": "node_rest_shop_max",
+  "version": "1.0.0",
+  "description": "A Node.js RESTful API Project (Build a simple shop API)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Belchenkov/node_rest_shop.git"
+  },
+  "keywords": [
+    "Node.js",
+    "REST",
+    "API"
+  ],
+  "author": "Aleksey Belchenkov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Belchenkov/node_rest_shop/issues"
+  },
+  "homepage": "https://github.com/Belchenkov/node_rest_shop#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

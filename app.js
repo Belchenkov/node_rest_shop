@@ -2,9 +2,17 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const productRoutes = require('./api/routes/products');
 const ordersRoutes = require('./api/routes/orders');
+
+mongoose.connect(
+    'mongodb+srv://' +  process.env.MONGO_ATLAS_USER + ':' + process.env.MONGO_ATLAS_PW + '@cluster0-1owsl.mongodb.net/node-rest-shop?retryWrites=true',
+    { useNewUrlParser: true }
+)
+    .then(() => console.log('MongoDB Connected'))
+    .catch((err) => console.log(err));
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
@@ -18,7 +26,6 @@ app.use((req, res, next) => {
         res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
         return res.status(200).json({});
     }
-
     next();
 });
 
